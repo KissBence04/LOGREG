@@ -25,7 +25,7 @@ public class LoggedInActivity extends AppCompatActivity {
         final SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
         String seged = "";
         seged = sharedPreferences.getString("nev","nincs ilyen érték");
-        adatok.setText(seged);
+        adatok.setText("Üdvözöljük "+seged+" !");
 
         ki.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +36,6 @@ public class LoggedInActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 editor.apply();
-                
             }
         });
     }
