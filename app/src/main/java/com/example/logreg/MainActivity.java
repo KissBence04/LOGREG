@@ -2,6 +2,9 @@ package com.example.logreg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -29,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Nem adtál meg felhasználónevet vagy jelszót",Toast.LENGTH_SHORT).show();
                     return;
                 }
+                SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("nev", felhnev.getText().toString());
+                editor.putString("jelszo", jelszo.getText().toString());
+                editor.apply();
+
+                Intent intent = new Intent(MainActivity.this,LoggedInActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
