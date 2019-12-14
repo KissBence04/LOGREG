@@ -29,13 +29,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(felhnev.getText().toString().trim().equals("") && jelszo.getText().toString().trim().equals(""))
                 {
-                    Toast.makeText(MainActivity.this,"Nem adtál meg felhasználónevet vagy jelszót",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Nem töltött ki minden mezőt!",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 SharedPreferences sharedPreferences = getSharedPreferences("Adatok", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("nev", felhnev.getText().toString());
-                editor.putString("jelszo", jelszo.getText().toString());
                 editor.apply();
 
                 Intent intent = new Intent(MainActivity.this,LoggedInActivity.class);

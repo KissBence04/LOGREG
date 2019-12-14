@@ -4,38 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/FelhET"
-        android:hint="Felhasználónév"
+        android:id="@+id/emailET"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/JelszoET"
+        android:id="@+id/felhET"
+        android:hint="Felhasználónév"
+        android:layout_below="@id/emailET"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/jelszoET"
         android:hint="Jelszó"
         android:inputType="textPassword"
-        android:layout_below="@id/FelhET"
+        android:layout_below="@id/felhET"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TNevET"
+        android:hint="Teljes név"
+        android:layout_below="@id/jelszoET"
         />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/BejelBTN"
-        android:text="Bejelentkezés"
-        android:layout_below="@id/JelszoET"
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/RegBTN"
+        android:id="@+id/RegisztracioBTN"
         android:text="Regisztráció"
-        android:layout_below="@id/BejelBTN"
+        android:layout_below="@id/TNevET"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/VisszaBTN"
+        android:text="Vissza"
+        android:layout_below="@id/RegisztracioBTN"
         />
 
 </RelativeLayout>
